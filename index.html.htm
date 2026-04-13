@@ -2,360 +2,301 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pendaftaran Satpam Gada Pratama</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan Satpam Gada Pratama - Sulawesi Tengah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS Reset & Variabel --- */
         :root {
-            --primary-color: #001533; /* Navy sangat tua, kesan gagah */
-            --accent-color: #C6A34F;  /* Emas redup, kesan resmi */
-            --secondary-color: #002366; /* Navy terang */
-            --text-light: #ffffff;
-            --text-dark: #333333;
-            --bg-body: #f0f2f5;
-            --success-green: #25d366; /* Warna WA */
+            --primary-gold: #D4AF37;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --light-text: #ffffff;
+            --gray-text: #cccccc;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-dark);
-            overflow-x: hidden;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
         }
 
-        /* --- Hero Section (Paling Atas) --- */
-        .hero {
-            position: relative;
-            background-image: linear-gradient(rgba(0, 21, 51, 0.8), rgba(0, 21, 51, 0.9)), 
-                              url('https://images.unsplash.com/photo-1590856029826-c7a73142bdf1?q=80&w=800'); /* GANTI DENGAN URL FOTO GAGAH ANDA */
-            background-size: cover;
-            background-position: center;
-            height: 80vh; /* Hampir satu layar penuh di HP */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-light);
+        /* --- Header --- */
+        header {
+            background: linear-gradient(135deg, var(--darker-bg), #333);
             padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-gold);
         }
 
-        .hero-content h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            line-height: 1.1;
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             margin-bottom: 10px;
         }
 
-        .hero-content p {
-            font-weight: 300;
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-primary {
-            font-family: 'Oswald', sans-serif;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 15px 40px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 700;
-            border-radius: 50px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(198, 163, 79, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(198, 163, 79, 0.6);
-        }
-
-        /* --- Container Section --- */
-        .container {
-            padding: 20px;
-            max-width: 600px; /* Optimal untuk HP */
-            margin: -50px auto 0 auto; /* Menaikkan konten sedikit ke atas hero */
-            position: relative;
-            z-index: 10;
-        }
-
-        .section {
-            background: white;
-            margin-bottom: 25px;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        h2.section-title {
-            font-family: 'Oswald', sans-serif;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        /* --- Gallery Modern --- */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 15px;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
-        }
-
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .photo-gallery img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .photo-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* --- Requirements List --- */
-        .req-list {
-            list-style: none;
-        }
-
-        .req-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-
-        .req-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* --- Form Modern --- */
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--secondary-color);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #e1e5eb;
-            border-radius: 8px;
-            background-color: #f9fafb;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background-color: #fff;
-            box-shadow: 0 0 0 3px rgba(198, 163, 79, 0.1);
-        }
-
-        .btn-wa {
-            font-family: 'Oswald', sans-serif;
-            width: 100%;
-            background-color: var(--success-green);
-            color: white;
-            padding: 18px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            cursor: pointer;
-            margin-top: 15px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gold);
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            font-size: 10px;
+            font-weight: bold;
+            color: black;
         }
 
-        .btn-wa:hover {
-            background-color: #1eb956;
-            transform: translateY(-2px);
+        header h1 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-gold);
         }
 
-        .btn-wa svg {
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
-            fill: white;
+        /* --- Social & Contact --- */
+        .social-bar {
+            background: #222;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
         }
 
-        /* --- Footer --- */
+        .social-bar a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* --- Hero Section (Slider & Video) --- */
+        .hero {
+            padding: 10px;
+        }
+
+        .slider-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-gold);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 30px 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        h2 {
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 10px;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        /* --- Form --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #333;
+            color: white;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
         footer {
             text-align: center;
-            padding: 30px 20px 20px 20px;
-            font-size: 0.8rem;
-            color: #888;
-            background-color: var(--primary-color);
-            margin-top: 20px;
-        }
-
-        /* --- Media Queries (Adjustment kecil untuk HP super kecil) --- */
-        @media (max-width: 360px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .section { padding: 15px; }
+            padding: 20px;
+            font-size: 0.7rem;
+            color: var(--gray-text);
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h1>GADA<br>PRATAMA</h1>
-            <p>Pusat Pendidikan & Pelatihan Satpam Profesional Resmi Mabes Polri. Angkatan 2024.</p>
-            <a href="#daftar" class="btn-primary">Daftar Sekarang</a>
+    <header>
+        <div class="logo-container">
+            <div class="logo-placeholder">LOGO 1</div>
+            <div class="logo-placeholder">LOGO 2</div>
         </div>
+        <h1>Pelatihan Satpam Gada Pratama<br>Sulawesi Tengah</h1>
+    </header>
+
+    <div class="social-bar">
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+        <a href="https://wa.me/628123456789">WhatsApp: 0812-3456-789</a>
     </div>
 
-    <div class="container">
-
-        <div class="section">
-            <h2 class="section-title">Pelatihan Fisik</h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <main>
+        <section class="hero">
+            <div class="slider-placeholder">
+                <p>[ Gambar Slide Pelatihan ]</p>
             </div>
-            <p style="font-size: 0.9rem; color: #666; font-style: italic; text-align: center;">Membentuk kedisiplinan dan mental baja.</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Dokumentasi</h2>
-            <div class="photo-gallery">
-                <img src="https://via.placeholder.com/200x120?text=Kelas+Teori" alt="Kelas Teori">
-                <img src="https://via.placeholder.com/200x120?text=Bela+Diri" alt="Bela Diri">
-                <img src="https://via.placeholder.com/200x120?text=Baris+Berbaris" alt="Baris Berbaris">
-                <img src="https://via.placeholder.com/200x120?text=Pelantikan" alt="Pelantikan">
+            <div class="video-container">
+                <iframe src="https://youtu.be/1N3PgaFH8bM?si=QaP8fhqU6IZItpqV" frameborder="0" allowfullscreen></iframe>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2 class="section-title">Syarat Utama</h2>
-            <ul class="req-list">
-                <li>Warga Negara Indonesia (WNI)</li>
-                <li>Ijazah minimal SMA/Sederajat</li>
-                <li>Usia minimal 18 tahun, maksimal 35 tahun</li>
-                <li>Tinggi badan min. 165cm (Pria) / 155cm (Wanita)</li>
-                <li>Tidak bertato dan tidak bertindik (Pria)</li>
-            }
+        <section>
+            <h2>Profil Perusahaan</h2>
+            <p>Kami adalah badan usaha jasa pengamanan (BUJP) resmi yang berdedikasi melahirkan personel satpam profesional, tangguh, dan beretika di wilayah Sulawesi Tengah.</p>
+        </section>
+
+        <section>
+            <h2>Investasi Pelatihan</h2>
+            <div class="card">
+                <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary-gold);">Rp 3.500.000,-</p>
+                <p style="font-size: 0.8rem;">*Biaya dapat berubah sesuai kebijakan gelombang pendaftaran.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Waktu & Lokasi</h2>
+            <p><strong>Tanggal:</strong> 15 - 30 Mei 2026</p>
+            <p><strong>Lokasi:</strong> Pusdiklat Brimob / Lokasi Terpilih, Palu, Sulawesi Tengah</p>
+        </section>
+
+        <section>
+            <h2>Fasilitas & Persyaratan</h2>
+            <div class="card">
+                <h3>Fasilitas:</h3>
+                <ul>
+                    <li>Ijazah Gada Pratama & KTA</li>
+                    <li>Seragam Pelatihan</li>
+                    <li>Makan & Akomodasi</li>
+                    <li>Sertifikat Khusus</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Persyaratan:</h3>
+                <ul>
+                    <li>Pria/Wanita (Min. 18 Tahun)</li>
+                    <li>Tinggi Badan Ideal</li>
+                    <li>FC Ijazah Terakhir (Min. SMA)</li>
+                    <li>SKCK Aktif</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Materi Pelatihan</h2>
+            <ul>
+                <li>Interpersonal Skill & Etika</li>
+                <li>Beladiri Polri</li>
+                <li>Penggunaan Tongkat & Borgol</li>
+                <li>Pengetahuan Hukum Terbatas</li>
+                <li>Kesiapsiagaan Tanggap Darurat</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section" id="daftar">
-            <h2 class="section-title">Registrasi Cepat</h2>
-            <p style="font-size: 0.9rem; margin-bottom: 20px; color: #555;">Isi data di bawah, langsung terhubung ke WhatsApp Admin.</p>
-            
+        <section>
+            <h2>Daftar Sekarang</h2>
             <form id="pendaftaranForm">
-                <div class="form-group">
-                    <label>Nama Lengkap (Sesuai KTP)</label>
-                    <input type="text" id="nama" placeholder="Masukkan nama lengkap Anda" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Kota Tinggal Saat Ini</label>
-                    <input type="text" id="alamat" placeholder="Contoh: Jakarta Selatan" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Tinggi Badan (cm)</label>
-                    <input type="number" id="tb" placeholder="Contoh: 172" required>
-                </div>
-
-                <button type="button" class="btn-wa" onclick="kirimKeWA()">
-                    <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-117zm-157 338.7h-.1c-34 0-67.3-9.1-96.5-26.3l-6.9-4.1-71.8 18.8 19.3-69.9-4.5-7.1c-18.9-30.1-28.8-64.9-28.8-100.8 0-103.8 84.5-188.2 188.4-188.2 50.3 0 97.5 19.7 133 55.3 35.5 35.6 55.1 82.9 55.1 133.2-.1 103.8-84.5 188.2-188.3 188.2zm101.8-138.7c-5.6-2.8-33.1-16.3-38.2-18.2-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18.2-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.6-2.8-23.5-8.7-44.8-27.7-16.6-14.8-27.8-33.1-31.1-38.7-3.2-5.6-.4-8.7 2.4-11.5 2.5-2.5 5.6-6.5 8.3-9.8 2.8-3.3 3.7-5.6 5.6-9.3 1.9-3.7.9-6.9-.5-9.8-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 33.1-13.5 37.7-26.6 4.7-13.1 4.7-24.3 3.2-26.6-1.3-2.3-5.1-3.7-10.7-6.5z"/></svg>
-                    KIRIM DATA SEKARANG
-                </button>
+                <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                <input type="tel" id="hp" placeholder="Nomor WhatsApp" required>
+                <select id="pendidikan">
+                    <option value="SMA">Pendidikan: SMA</option>
+                    <option value="D3/S1">Pendidikan: D3/S1</option>
+                </select>
+                <textarea id="pesan" placeholder="Catatan tambahan (opsional)"></textarea>
+                <button type="button" class="btn-wa" onclick="kirimWA()">Kirim Pendaftaran ke WhatsApp</button>
             </form>
-        </div>
-
-    </div>
+        </section>
+    </main>
 
     <footer>
-        <p style="font-family: 'Oswald', sans-serif; color: #fff; margin-bottom: 10px;">PUSDIKLAT GADA PRATAMA</p>
-        &copy; 2024 Seluruh Hak Cipta Dilindungi.<br>
-        Resmi & Terakreditasi Mabes Polri.
+        <p>&copy; 2026 Pelatihan Satpam Sulawesi Tengah. Eksklusif & Profesional.</p>
     </footer>
 
     <script>
-        function kirimKeWA() {
+        function kirimWA() {
             const nama = document.getElementById('nama').value;
-            const alamat = document.getElementById('alamat').value;
-            const tb = document.getElementById('tb').value;
-
-            if (nama === "" || alamat === "" || tb === "") {
-                alert("Mohon lengkapi semua data pendaftaran!");
-                return;
-            }
-
-            // --- GANTI NOMOR ANDA DI SINI ---
-            const noHP = "628123456789"; 
+            const hp = document.getElementById('hp').value;
+            const pendidikan = document.getElementById('pendidikan').value;
+            const pesan = document.getElementById('pesan').value;
             
-            // Format pesan lebih rapi
-            const pesan = "Halo Admin Pusdiklat Gada Pratama,%0A" + 
-                          "Saya ingin mendaftar Diklat Angkatan 2024.%0A%0A" + 
-                          "*DATA PENDAFTAR*%0A" +
-                          "---------------------------------%0A" +
-                          "Nama: " + nama + "%0A" +
-                          "Kota: " + alamat + "%0A" +
-                          "Tinggi: " + tb + " cm%0A" +
-                          "---------------------------------%0A%0A" +
-                          "Mohon informasi Jadwal dan Biayanya. Terima kasih.";
-
-            const url = "https://wa.me/" + noHP + "?text=" + pesan;
-            window.open(url, '_blank');
+            const nomorWA = "628123456789"; // Ganti dengan nomor WA admin Anda
+            
+            const teks = `Halo Admin, saya ingin daftar Pelatihan Gada Pratama.%0A%0A*Nama:* ${nama}%0A*No HP:* ${hp}%0A*Pendidikan:* ${pendidikan}%0A*Pesan:* ${pesan}`;
+            
+            window.open(`https://wa.me/${nomorWA}?text=${teks}`, '_blank');
         }
     </script>
 
